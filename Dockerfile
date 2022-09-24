@@ -1,4 +1,4 @@
-FROM ubi8/ubi-minimal:latest
+FROM ubi8/ubi-minimal
 
 ENV NAME=golang \
     GO_MAJOR_VERSION=1 \
