@@ -1,4 +1,4 @@
-FROM ubi8/ubi-minimal
+FROM registry.access.redhat.com/ubi8/ubi-minimal
 
 ENV NAME=golang \
     GO_MAJOR_VERSION=1 \
