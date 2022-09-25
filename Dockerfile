@@ -23,9 +23,9 @@ LABEL summary="$SUMMARY" \
       name="$CONTAINER_NAME" \
       version="$VERSION"
 
-RUN yum install -y --setopt=tsflags=nodocs go-toolset && \
+RUN mikrodnf install -y --setopt=tsflags=nodocs go-toolset && \
     # rpm -V $INSTALL_PKGS && \
-    yum clean all -y
+    mikrodnf clean all -y
 
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH.
 COPY ./s2i/bin/ $STI_SCRIPTS_PATH
