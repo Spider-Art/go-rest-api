@@ -30,7 +30,7 @@ RUN microdnf install -y --setopt=tsflags=nodocs go-toolset && \
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH.
 #COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 
-COPY ./root/ /
+#COPY ./root/ /
 
 #RUN chown -R 1001:0 $STI_SCRIPTS_PATH && chown -R 1001:0 $APP_ROOT
 
