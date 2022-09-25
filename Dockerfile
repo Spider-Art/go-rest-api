@@ -4,6 +4,7 @@ ENV NAME=golang \
     GO_MAJOR_VERSION=1 \
     GO_MINOR_VERSION=17 \
     GO_PATCH_VERSION=12 \
+    INSTALL_PKGS="go-toolset" \
     CONTAINER_NAME="rhel8/go-toolset"
 
 # Define the VERSION environment variable in a separate step, so we can
@@ -22,8 +23,7 @@ LABEL summary="$SUMMARY" \
       name="$CONTAINER_NAME" \
       version="$VERSION"
 
-RUN INSTALL_PKGS="go-toolset" && \
-    yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
+RUN yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
     yum clean all -y
 
