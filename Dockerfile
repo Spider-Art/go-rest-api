@@ -23,8 +23,8 @@ LABEL summary="$SUMMARY" \
       name="$CONTAINER_NAME" \
       version="$VERSION"
 
-RUN yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
-    rpm -V $INSTALL_PKGS && \
+RUN yum install -y --setopt=tsflags=nodocs go-toolset && \
+    # rpm -V $INSTALL_PKGS && \
     yum clean all -y
 
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH.
